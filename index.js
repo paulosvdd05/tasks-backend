@@ -5,6 +5,7 @@ const consign = require('consign')
 
 consign()
     .then('./config/middlewares.js')
+    .then('./api')
     .into(app)
 
 app.db = db
