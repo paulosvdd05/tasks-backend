@@ -11,10 +11,6 @@ consign()
 
 app.db = db
 
-app.get('/', (req, res) => {
-    res.status(200).send('Meu Backend')
-})
-
-app.listen(3000, () =>{
-    console.log('backend executando...');
+app.listen(3000, () => {
+    console.log('Backend executando...')
 })
