@@ -48,5 +48,19 @@ module.exports = app => {
             .catch(err => res.status(400).json(err))
 
     }
-
+    const toggleTask = (req, res) =>{
+        app.db('tasks')
+            .where({id: req.params.id, userId: req.user.id})
+            .first()
+            .then(task=>{
+                if(!task){
+                    const msg = `Task com id ${req.params.id}`
+                    return res.status(400).send(msg)
+                }
+                const doneAt = task.doneAt ? null : new Date()
+                updateTaskDoneAt(req, res, doneAt)
+            })
+            .catch(err => res.status(400).json(err))
+    }
+    return { getTasks, save, remove, toggleTask}
 }
