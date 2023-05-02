@@ -39,4 +39,14 @@ module.exports = app => {
         })
         .catch(err => res.status(400).json(err))
     }
+
+    const updateTaskDoneAt = (req, res, doneAt) =>{
+        app.db('tasks')
+            .where({id: req.params.id, userId: req.user.id})
+            .update({doneAt})
+            .then(_ => res.status(204).send())
+            .catch(err => res.status(400).json(err))
+
+    }
+
 }
