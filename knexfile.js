@@ -6,6 +6,7 @@
 module.exports = {
     client: 'postgresql',
     connection: {
+      host:'postgres://paulo:X9dJXmQCRAyRtPrSaXMUbRJTkE1sSunA@dpg-ckjauo8mccbs738houh0-a/tasks_8s5d',
       database: 'tasks_8s5d',
       user:     'paulo',
       password: 'X9dJXmQCRAyRtPrSaXMUbRJTkE1sSunA'
